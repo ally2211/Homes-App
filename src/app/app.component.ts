@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { HousingLocationComponent } from './housing-location/housing-location.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -12,6 +13,7 @@ import { HousingLocationComponent } from './housing-location/housing-location.co
         aria-hidden="true">
       </header>
       <section class="content">
+        <router-outlet></router-outlet>
         <app-home></app-home>
       </section>
       <section class="results">
@@ -20,7 +22,7 @@ import { HousingLocationComponent } from './housing-location/housing-location.co
     </main>
   `,
   styleUrls: ['./app.component.css'],
-  imports: [HomeComponent, HousingLocationComponent],
+  imports: [HomeComponent, HousingLocationComponent, RouterModule],
 })
 export class AppComponent {
   title = 'homes';
